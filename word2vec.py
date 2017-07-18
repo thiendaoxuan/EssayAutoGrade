@@ -68,6 +68,8 @@ def load_data_and_labels():
             if firstLine:
                 firstLine = False
                 continue
+
+            # chi lay essay 4-5 diem de train
             if (row[3] == "5" or row[3] == "4") and int(row[1]) < 6:
                 cur_row = clean_str(row[2])
                 row_arr = cur_row.split(" ")

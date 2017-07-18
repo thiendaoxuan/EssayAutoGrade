@@ -94,6 +94,8 @@ def select_based_id(data_input, id):
 
 
 # AutoGen file data
+# Xoa data trong tokenized_data truoc khi train lai, neu khong la no de len
+
 if __name__ == "__main__":
 
     print ('begin')

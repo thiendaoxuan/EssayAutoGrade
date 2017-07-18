@@ -11,6 +11,7 @@ from keras.models import Model
 print 'Loading data'
 x, y, vocabulary, vocabulary_inv = load_data()
 
+#tach tap data ra lam 2 : 8-2, can phai xem xet lai
 X_train, X_test, y_train, y_test = train_test_split( x, y, test_size=0.2, random_state=42)
 
 sequence_length = x.shape[1]
@@ -51,5 +52,7 @@ adam = Adam(lr=1e-4, beta_1=0.9, beta_2=0.999, epsilon=1e-08)
 model.compile(optimizer=adam, loss='binary_crossentropy', metrics=['accuracy'])
 model.fit(X_train, y_train, batch_size=batch_size, nb_epoch=nb_epoch, verbose=1, callbacks=[checkpoint], validation_data=(X_test, y_test))
 # starts training
+
+#TODO : test with new data
 model.predict(['I love you'])
 
